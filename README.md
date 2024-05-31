@@ -16,3 +16,5 @@ Projeto contua sendo usaro no curso 2.
 ## Curso: Lógica de Programação - funções e listas
 
 - Aula 01 - Interagindo com HTML.
+- Aula 02 - Funções.
+- Aula 03 - Reiniciando o jogo.
