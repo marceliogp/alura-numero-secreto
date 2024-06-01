@@ -6,6 +6,7 @@ let tentativas = 1;
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
 function exibirMensagemInicial() {
@@ -26,9 +27,9 @@ function verificarChute() {
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute > numeroSecreto) {
-                exibirTextoNaTela('p', 'O número secreto é menor');
+            exibirTextoNaTela('p', 'O número secreto é menor');
         } else {
-                exibirTextoNaTela('p', 'O número secreto é maior');
+            exibirTextoNaTela('p', 'O número secreto é maior');
         }
         tentativas++;
         limparCampo();
@@ -42,12 +43,11 @@ function gerarNumeroAleatorio() {
     if (quantidadeDeElementosNaLista == numeroLimite) {
         listaDeNumerosSorteados = [];
     }
-
     if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
         return gerarNumeroAleatorio();
     } else {
         listaDeNumerosSorteados.push(numeroEscolhido);
-        console.log(listaDeNumerosSorteados);
+        console.log(listaDeNumerosSorteados)
         return numeroEscolhido;
     }
 }
@@ -60,7 +60,14 @@ function limparCampo() {
 function reiniciarJogo() {
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
-    tentativas =1;
+    tentativas = 1;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true)
 }
+
+
+
+
+
+
+
